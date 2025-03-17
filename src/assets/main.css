@@ -1,0 +1,24 @@
+@import './base.css';
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Sarmady';
+  src: url('/fonts/Sarmady-SemiBold.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  
+}
+
+body {
+  font-family: 'Sarmady', 'Nunito', sans-serif;
+  direction: rtl;
+}
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+  --color-greenColor: #78C2AA;
+  --color-darkBlue: #263772;
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+}
