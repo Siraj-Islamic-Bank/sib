@@ -18,13 +18,15 @@
         <div
           class="col-start-4 col-span-full justify-between items-center text-3xl text-darkBlue hidden md:flex"
         >
-          <h1>من نحن</h1>
-          <h1>التمويل الاسلامي</h1>
-          <h1>الخدمات الالكترونية</h1>
-          <h1>الافراد</h1>
-          <h1>الشركات</h1>
-          <h1>اتصل بنا</h1>
-          <h1>English</h1>
+          <h1>{{ state.t('about_us') }}</h1>
+          <h1>{{ state.t('islamic_finance') }}</h1>
+          <h1>{{ state.t('e_services') }}</h1>
+          <h1>{{ state.t('individuals') }}</h1>
+          <h1>{{ state.t('companies') }}</h1>
+          <h1>{{ state.t('contact_us') }}</h1>
+          <button @click="toggleLanguage" class="font-bold hover:cursor-pointer">
+            {{ state.t('english') }}
+          </button>
         </div>
 
         <button @click="toggleMenu" class="md:hidden col-start-12 text-3xl text-darkBlue">
@@ -40,13 +42,13 @@
     >
       <button @click="toggleMenu" class="absolute top-6 right-8 text-3xl">✖</button>
       <div class="flex flex-col items-center gap-y-8 text-2xl cursor-pointer">
-        <h1>من نحن</h1>
-        <h1>التمويل الاسلامي</h1>
-        <h1>الخدمات الالكترونية</h1>
-        <h1>الافراد</h1>
-        <h1>الشركات</h1>
-        <h1>اتصل بنا</h1>
-        <h1>English</h1>
+        <h1>{{ state.t('about_us') }}</h1>
+        <h1>{{ state.t('islamic_finance') }}</h1>
+        <h1>{{ state.t('e_services') }}</h1>
+        <h1>{{ state.t('individuals') }}</h1>
+        <h1>{{ state.t('companies') }}</h1>
+        <h1>{{ state.t('contact_us') }}</h1>
+        <button @click="toggleLanguage" class="font-bold">{{ state.t('english') }}</button>
       </div>
     </div>
   </div>
@@ -54,11 +56,15 @@
 
 <script setup>
 import { ref } from 'vue'
+import { state } from '@/stores/store'
 
 const menuOpen = ref(false)
+
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
 }
-</script>
 
-<style scoped></style>
+const toggleLanguage = () => {
+  state.setLocale(state.locale === 'ar' ? 'en' : 'ar')
+}
+</script>

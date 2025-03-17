@@ -8,11 +8,22 @@
   font-style: normal;
 }
 
+html[dir='rtl'] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='ltr'] body {
+  direction: ltr;
+  text-align: left;
+}
+
 body {
   font-family: 'Sarmady', 'Nunito', sans-serif;
   direction: rtl;
   background-color: white;
 }
+
 .dark body {
   @apply bg-amber-300 text-white;
 }
