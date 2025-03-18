@@ -22,11 +22,16 @@ body {
   font-family: 'Sarmady', 'Nunito', sans-serif;
   direction: rtl;
   background-color: white;
+  color: #263772;
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 
 .dark body {
-  @apply bg-amber-300 text-white;
+  background: linear-gradient(to bottom, #4e489e, #243f88, #10153b);
 }
+
 @theme {
   --font-display: 'Satoshi', 'sans-serif';
   --breakpoint-3xl: 1920px;
@@ -34,5 +39,4 @@ body {
   --color-darkBlue: #263772;
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  /* ... */
 }

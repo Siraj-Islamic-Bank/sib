@@ -1,36 +1,34 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { state } from '@/stores/store'
+import { onMounted } from 'vue'
+import { useThemeStore } from '@/stores/themeStore'
 import HeroSectionComponent from '/src/components/HeroSectionComponent.vue'
 import IllustrationComponent from '../components/IllustartionComponent.vue'
 import NavBarComponent from '/src/components/NabBarComponent.vue'
 
-const isDark = ref(false)
-
-const toggleDarkMode = () => {
-  isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-  localStorage.setItem('darkMode', isDark.value)
-}
+const themeStore = useThemeStore()
 
 onMounted(() => {
-  isDark.value = localStorage.getItem('darkMode') === 'true'
-  document.documentElement.classList.toggle('dark', isDark.value)
-  state.loadLocale() // Load saved language preference
+  themeStore.isDark = localStorage.getItem('darkMode') === 'true'
+  document.documentElement.classList.toggle('dark', themeStore.isDark)
 })
 </script>
 
 <template>
-  <div class="w-full h-screen flex flex-col overflow-hidden transition-colors duration-300">
+  <div
+    class="w-full h-screen flex flex-col overflow-hidden transition-colors duration-500 ease-in-out"
+  >
     <button
-      @click="toggleDarkMode"
-      class="fixed left-6 top-1/2 -translate-y-1/2 p-4 rounded-full shadow-lg bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white transition-all hover:scale-110 hover:bg-gray-300 dark:hover:bg-gray-700 flex items-center justify-center"
+      @click="themeStore.toggleDarkMode"
+      class="fixed left-6 cursor-pointer top-1/2 -translate-y-1/2 p-3 rounded-full shadow-md transition-all hover:scale-110 flex items-center justify-center"
+      :class="themeStore.isDark ? ' text-yellow-200' : ' text-darkBlue'"
     >
-      <span class="material-icons text-2xl">
-        {{ isDark ? state.t('dark_mode') : state.t('light_mode') }}
-      </span>
+      <transition name="fade">
+        <span v-if="themeStore.isDark" class="material-icons text-2xl"> light_mode </span>
+        <span v-else class="material-icons text-2xl"> dark_mode </span>
+      </transition>
     </button>
 
+    <!-- Header -->
     <header class="w-full">
       <NavBarComponent />
     </header>
@@ -47,4 +45,16 @@ onMounted(() => {
 
 <style>
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 0.1s ease-in-out,
+    transform 0.1s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.3s);
+}
 </style>

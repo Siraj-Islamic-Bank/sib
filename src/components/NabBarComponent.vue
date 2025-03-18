@@ -11,12 +11,17 @@
       <div class="border-b-2 border-greenColor pb-3 grid grid-cols-12">
         <!-- Logo -->
         <div class="col-start-1 col-span-4 md:col-span-2">
-          <img src="../../public/logos/logo.svg" alt="Logo" />
+          <img
+            :src="themeStore.isDark ? '/public/logos/logoDark.svg' : '/public/logos/logo.svg'"
+            alt="Logo"
+            class="w-auto h-18 transition-all duration-300"
+          />
         </div>
 
         <!-- Desktop Menu -->
         <div
-          class="col-start-4 col-span-full justify-between items-center text-3xl text-darkBlue hidden md:flex"
+          class="col-start-4 col-span-full justify-between items-center text-3xl hidden md:flex cursor-pointer"
+          :class="themeStore.isDark ? 'text-white' : 'text-darkBlue'"
         >
           <h1>{{ state.t('about_us') }}</h1>
           <h1>{{ state.t('islamic_finance') }}</h1>
@@ -48,17 +53,21 @@
         <h1>{{ state.t('individuals') }}</h1>
         <h1>{{ state.t('companies') }}</h1>
         <h1>{{ state.t('contact_us') }}</h1>
-        <button @click="toggleLanguage" class="font-bold">{{ state.t('english') }}</button>
+        <button @click="toggleLanguage" class="font-bold hover:cursor-pointer">
+          {{ state.t('english') }}
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { state } from '@/stores/store'
+import { useThemeStore } from '@/stores/themeStore'
 
 const menuOpen = ref(false)
+const themeStore = useThemeStore()
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -67,4 +76,9 @@ const toggleMenu = () => {
 const toggleLanguage = () => {
   state.setLocale(state.locale === 'ar' ? 'en' : 'ar')
 }
+
+onMounted(() => {
+  themeStore.isDark = localStorage.getItem('darkMode') === 'true'
+  document.documentElement.classList.toggle('dark', themeStore.isDark)
+})
 </script>
