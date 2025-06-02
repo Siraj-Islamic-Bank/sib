@@ -8,13 +8,17 @@
     />
 
     <nav class="top-0 w-full z-10 bg-transparent px-8 md:px-[120px] py-12">
-      <div class="border-b-2 border-greenColor pb-3 grid grid-cols-12">
+      <div class="border-b-2 border-greenColor pb-3 grid grid-cols-12 text-left">
         <!-- Logo -->
         <div class="col-start-1 col-span-4 md:col-span-2">
           <img
-            :src="themeStore.isDark ? '/public/logos/logoDark.svg' : '/public/logos/logo.svg'"
+            :src="
+              themeStore.isDark
+                ? '/public/logos/Alseraj - Final logo.png'
+                : '/public/logos/Alseraj - Final logo.png'
+            "
             alt="Logo"
-            class="w-auto h-18 transition-all duration-300"
+            class="h-40 transition-all duration-300"
           />
         </div>
 

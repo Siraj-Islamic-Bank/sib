@@ -12,7 +12,6 @@ html[dir='rtl'] body {
   direction: rtl;
   text-align: right;
 }
-
 html[dir='ltr'] body {
   direction: ltr;
   text-align: left;
