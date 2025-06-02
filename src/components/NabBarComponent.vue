@@ -12,11 +12,7 @@
         <!-- Logo -->
         <div class="col-start-1 col-span-4 md:col-span-2">
           <img
-            :src="
-              themeStore.isDark
-                ? '/public/logos/Alseraj - Final logo.png'
-                : '/public/logos/Alseraj - Final logo.png'
-            "
+            src="/public/logos/Alseraj-Final-logo.png"
             alt="Logo"
             class="h-40 transition-all duration-300"
           />
