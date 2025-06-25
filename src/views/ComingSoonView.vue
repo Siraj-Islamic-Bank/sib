@@ -29,7 +29,7 @@
           {{ state.t('coming_soon_message_3') }}
         </p>
         <h1
-          class="text-6xl md:text-9xl font-bold mb-4 leading-tight"
+          class="text-6xl md:text-9xl font-bold mb-4"
           :class="themeStore.isDark ? 'text-white' : 'text-#201F4F'"
         >
           {{ state.t('coming_soon_message') }}
