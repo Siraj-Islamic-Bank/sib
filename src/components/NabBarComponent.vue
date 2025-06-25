@@ -7,20 +7,26 @@
       class="absolute md:-top-8 top-6 left-0 w-full h-auto -z-10 scale-200 md:scale-100"
     />
 
-    <nav class="top-0 w-full z-10 bg-transparent px-8 md:px-[120px] py-12">
-      <div class="border-b-2 border-greenColor pb-3 grid grid-cols-12 text-left">
+    <nav class="top-0 w-full z-10 bg-transparent px-8 md:px-[120px] py-6">
+      <div class="border-b-2 border-greenColor grid grid-cols-12 text-left md:py-8 py-4 pb-6">
         <!-- Logo -->
-        <div class="col-start-1 col-span-4 md:col-span-2">
+        <div
+          class="col-start-1 col-span-4 md:col-span-2 flex md:justify-start justify-center items-center"
+        >
           <img
-            src="/public/logos/Alseraj-Final-logo.png"
+            :src="
+              themeStore.isDark
+                ? '/public/Logo/SVG/sib-icon-w.svg'
+                : '/public/Logo/SVG/sib-icon-full.svg'
+            "
             alt="Logo"
-            class="h-40 transition-all duration-300"
+            class="h-12 md:h-12 md:w-auto w-full transition-all duration-300"
           />
         </div>
 
         <!-- Desktop Menu -->
         <div
-          class="col-start-4 col-span-full justify-between items-center text-3xl hidden md:flex cursor-pointer"
+          class="col-start-4 col-span-full justify-between items-center text-3xl hidden md:flex cursor-pointer mb-4"
           :class="themeStore.isDark ? 'text-white' : 'text-darkBlue'"
         >
           <h1>{{ state.t('about_us') }}</h1>

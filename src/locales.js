@@ -7,7 +7,10 @@ export const messages = {
     companies: 'Companies',
     contact_us: 'Contact Us',
     maintenance_message: 'Sorry, the site is currently under maintenance',
-    english: 'العربية', // Switch to Arabic
+    coming_soon_message: 'Coming Soon',
+    coming_soon_message_2: 'We are almost there',
+    coming_soon_message_3: 'The site will be ready soon',
+    english: 'العربية',
     light_mode: 'Light Mode',
     dark_mode: 'Dark Mode',
   },
@@ -19,7 +22,10 @@ export const messages = {
     companies: 'الشركات',
     contact_us: 'اتصل بنا',
     maintenance_message: 'عذرًا، الموقع تحت الصيانة حاليًا',
-    english: 'English', // Switch to English
+    coming_soon_message: 'قادم قريبًا',
+    coming_soon_message_2: 'نحن على وشك الإطلاق',
+    coming_soon_message_3: 'الموقع سيكون جاهزًا قريبًا',
+    english: 'English',
     light_mode: 'الوضع الفاتح',
     dark_mode: 'الوضع الداكن',
   },

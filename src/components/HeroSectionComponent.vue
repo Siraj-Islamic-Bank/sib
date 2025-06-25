@@ -13,7 +13,7 @@
       class="text-darkBlue font-bold text-4xl md:text-6xl"
       :class="themeStore.isDark ? 'text-white' : 'text-darkBlue'"
     >
-      {{ state.t('maintenance_message') }}
+      {{ state.t('coming_soon_message') }}
     </h1>
   </div>
 </template>

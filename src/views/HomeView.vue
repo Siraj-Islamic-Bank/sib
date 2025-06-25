@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
 import HeroSectionComponent from '/src/components/HeroSectionComponent.vue'
-import IllustrationComponent from '../components/IllustartionComponent.vue'
+import IllustrationComponent from '/src/components/IllustrationComponent.vue'
 import NavBarComponent from '/src/components/NabBarComponent.vue'
 
 const themeStore = useThemeStore()

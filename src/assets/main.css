@@ -28,7 +28,7 @@ body {
 }
 
 .dark body {
-  background: linear-gradient(to bottom, #4e489e, #243f88, #10153b);
+  background: linear-gradient(to bottom, #4e489e, #10153b);
 }
 
 @theme {

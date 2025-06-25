@@ -1,0 +1,10 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Paper plane body -->
+  <polygon points="30,170 290,100 30,30 80,100" fill="#263772"/>
+  <!-- Paper plane fold -->
+  <polygon points="30,170 80,100 110,120" fill="#78C2AA"/>
+  <!-- Paper plane highlight -->
+  <polygon points="30,170 110,120 290,100" fill="#FEFFFF"/>
+  <!-- Dotted launch path -->
+  <polyline points="60,180 100,160 140,140 180,120 220,110" fill="none" stroke="#78C2AA" stroke-width="3" stroke-dasharray="8,8"/>
+</svg> 
